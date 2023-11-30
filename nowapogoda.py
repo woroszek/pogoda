@@ -8,6 +8,7 @@ location = [52.229676, 21.012229]
 
 class WeatherForecast:
     dates = {}
+
     def __init__(self, date=''):
         self.date = date
         if os.path.exists("weather.json"):
@@ -59,6 +60,7 @@ class WeatherForecast:
         for key, value in self.dates.items():
             yield key, value
 
+
 user_date = input('Podaj datę dla szukanej pogody: ')
 
 weather_forecast = WeatherForecast()
@@ -66,6 +68,3 @@ weather_forecast[user_date]
 
 for item in weather_forecast.items():
     print(item)
-
-
-
