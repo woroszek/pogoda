@@ -26,7 +26,7 @@ class WeatherForecast:
         try:
             datetime.strptime(date, "%Y-%m-%d")
             print(f'Sprawdzam pogodę dla {date}')
-        except ValueError:
+        except (ValueError, TypeError):
             print("Podano nieprawidłowy format daty. Program przyjmie dzień jutrzejszy.")
             date = datetime.today() + timedelta(days=1)
             date = date.strftime("%Y-%m-%d")
